@@ -1,214 +1,217 @@
-/* Hero Section */
-.hero-section {
-    height: 100vh;
+/* General Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h5 {
+    font-weight: 700;
+  }
+  
+  /* Navbar */
+  .navbar-brand img {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .navbar-brand span {
+    font-weight: 600;
+    font-size: 1.1rem;
     color: white;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-        url('https://sphero.com/cdn/shop/articles/software_1_600x.png?v=1655411201') center/cover no-repeat;
+  }
+  
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 15px;
-}
-
-.hero-section h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
-
-.hero-section p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
-.btn-primary {
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.5); /* darken video for text readability */
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+  
+  
+  .btn-primary {
     background-color: #00bfa6;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
     background-color: #008c7f;
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 143, 127, 0.6);
-}
-
-.btn-primary:focus-visible {
+  }
+  
+  .btn-primary:focus-visible {
     outline: 3px solid #008c7f;
     outline-offset: 3px;
-}
-
-section {
+  }
+  
+  /* Section padding */
+  section {
     scroll-margin-top: 70px;
-}
-
-#about .container,
-#services .container,
-#contact .container {
+    padding: 60px 15px;
+  }
+  
+  /* About, Services, Contact Containers */
+  #about .container,
+  #services .container,
+  #contact .container {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 40px 30px;
     max-width: 900px;
     margin: 0 auto;
-}
-
-#about h2,
-#services h2,
-#contact h2 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #222;
-}
-
-#about p {
-    font-size: 1.15rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-#services .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 360px; /* Adjust as needed */
   }
   
-  #services .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem 1.5rem;
-    text-align: center;
+  #about p,
+  .card-text,
+  .form-control {
+    font-size: 1.05rem;
   }
   
-  #services .card-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  #services .card-text {
-    margin-top: auto;
-    color: #444;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  #services .card-img-top {
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+  /* Services Cards */
+  #services .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   #services .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* Image styling for service cards */
-.card-img-top {
+  }
+  
+  #services .card-body {
+    padding: 2rem 1.5rem;
+  }
+  
+  #services .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-img-top {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 180px;
     object-fit: cover;
-}
-
-#contact form {
+  }
+  
+  /* Contact Form */
+  #contact form {
     max-width: 600px;
     margin: 0 auto;
-}
-
-#contact .form-label {
+  }
+  
+  #contact .form-label {
     font-weight: 600;
     color: #333;
-}
-
-#contact .form-control {
+  }
+  
+  #contact .form-control {
     border-radius: 8px;
     padding: 12px 15px;
     font-size: 1rem;
     border: 1px solid #ccc;
     transition: border-color 0.3s ease;
-}
-
-#contact .form-control:focus {
+  }
+  
+  #contact .form-control:focus {
     border-color: #00bfa6;
     box-shadow: 0 0 8px rgba(0,191,166,0.3);
-}
-
-#contact button.btn-primary {
+  }
+  
+  #contact button.btn-primary {
     border-radius: 8px;
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: 700;
-}
-
-.footer-social-icons {
+  }
+  
+  /* Footer */
+  footer {
+    position: relative;
+  }
+  
+  .footer-social-icons {
     margin-top: 10px;
-}
-
-.footer-social-icons a {
+  }
+  
+  .footer-social-icons a {
     color: white;
     margin: 0 12px;
     font-size: 1.5rem;
     transition: color 0.3s ease;
-}
-
-.footer-social-icons a:hover {
+  }
+  
+  .footer-social-icons a:hover {
     color: #00bfa6;
-}
-
-@media (max-width: 767px) {
+  }
+  
+  /* Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-name: fadeInUp;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 767px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+  
     #about .container,
     #services .container,
     #contact .container {
-        padding: 30px 20px;
+      padding: 30px 20px;
     }
-}
-
-/* Fade-in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation-fill-mode: forwards;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
-  animation-name: fadeInUp;
-  animation-delay: 0.3s;
-}
-
-#about.fade-in-up {
-  animation-delay: 0.3s;
-}
-
-#services.fade-in-up {
-  animation-delay: 0.6s;
-}
-
-#contact.fade-in-up {
-  animation-delay: 0.9s;
-}
-
-.navbar-brand img {
-    border-radius: 8px;
-    object-fit: cover;
+  
+    .navbar-brand span {
+      font-size: 1rem;
+    }
   }
   
