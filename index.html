@@ -4,20 +4,28 @@
   <meta charset="UTF-8" />
   <title>DigitalHub ZA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="DigitalHub ZA - Your all-in-one digital partner in South Africa. We build websites, automate workflows, and design stunning visuals.">
+  <meta name="keywords" content="DigitalHub ZA, website development, SEO, automation, South Africa, software company">
+  <meta name="author" content="DigitalHub ZA">
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.jpg" type="image/x-icon" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body>
+<body style="font-family: 'Poppins', sans-serif;">
 
-<!-- Main Site Content -->
-<div id="main-content">
-
- <!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#">
       <img src="logo.jpg" alt="Digital Hub ZA Logo" width="40" height="40" class="me-2 rounded" />
+      <span>DigitalHub ZA</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -32,155 +40,149 @@
   </div>
 </nav>
 
+<!-- Hero Section -->
+<header class="hero-section">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h1>Welcome to DigitalHub ZA</h1>
+    <p>Your all-in-one digital partner in South Africa</p>
+    <a href="#services" class="btn btn-primary">Explore Services</a>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <header class="hero-section">
-    <div>
-      <h1>Welcome to DigitalHub ZA</h1>
-      <p>Your all-in-one digital partner in South Africa</p>
-      <a href="#services" class="btn btn-primary">Explore Services</a>
-    </div>
-  </header>
 
-  <!-- About Section -->
-  <section id="about" class="py-5 bg-light fade-in-up">
-    <div class="container">
-      <h2 class="text-center mb-4">About Us</h2>
-      <p class="text-center">
-        DigitalHub ZA is a professional software company based in South Africa, delivering world-class digital services.
-        We help businesses grow by offering innovative solutions that are cost-effective, scalable, and future-ready.
-      </p>
-    </div>
-  </section>
+<!-- About Section -->
+<section id="about" class="py-5 bg-light fade-in-up">
+  <div class="container">
+    <h2 class="text-center mb-4">About Us</h2>
+    <p class="text-center">
+      DigitalHub ZA is a professional software company based in South Africa, delivering world-class digital services.
+      We help businesses grow by offering innovative solutions that are cost-effective, scalable, and future-ready.
+    </p>
+  </div>
+</section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-5 fade-in-up">
-    <div class="container">
-      <h2 class="text-center mb-5">Our Services</h2>
-      <div class="row text-center">
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg" alt="Website Development" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">Website Development</h5>
-              <p class="card-text">Modern, responsive, and scalable websites.</p>
-            </div>
+<!-- Services Section -->
+<section id="services" class="py-5 fade-in-up">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Services</h2>
+    <div class="row text-center">
+
+      <!-- Service Cards -->
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg" alt="Website Development" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">Website Development</h5>
+            <p class="card-text">Modern, responsive, and scalable websites.</p>
           </div>
         </div>
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://media.licdn.com/dms/image/v2/D4E12AQE4iYCPfqXVSA/article-cover_image-shrink_423_752/B4EZVN.tfuG0AU-/0/1740770040573?e=2147483647&v=beta&t=O5xh5gK-XM-WHP9OI4EL60-f06_pP4tGNBOood2hZwc" alt="Data Analysis" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">Data Analysis</h5>
-              <p class="card-text">Business insights through clean, reliable data.</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxtNbPUQcm8Y84zL5g11s5Oj2BsB9xjdwVg&s" alt="Graphic Design" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">Graphic Design</h5>
-              <p class="card-text">Creative and eye-catching visuals for your brand.</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR36mKCMcSv3S5jjIDVQOxaHudP4z4-tQXkQ&s" alt="SEO Optimization" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">SEO Optimization</h5>
-              <p class="card-text">Boost your visibility and rank higher on search engines.</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvwI_2fxcV-U05za5atF81KsOxS5VNGGNqw&s" alt="Automation" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">Automation</h5>
-              <p class="card-text">Streamline your workflows with smart automation tools.</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="https://accountmanagementskills.com/wp-content/uploads/2022/01/Essential-skills-featured-image-1.jpg" alt="Account Management" class="card-img-top rounded-top" />
-            <div class="card-body">
-              <h5 class="card-title">Account Management</h5>
-              <p class="card-text">Comprehensive, end-to-end client support solutions.</p>
-            </div>
-          </div>
-        </div>
-  
       </div>
-    </div>
-  </section>
-  
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-light fade-in-up">
-    <div class="container">
-      <h2 class="text-center mb-4">Contact Us</h2>
-      <form action="https://formsubmit.co/digitalhubza1@gmail.com" method="POST" class="mx-auto" style="max-width: 600px;">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_subject" value="New Inquiry from DigitalHub ZA Website">
-        <input type="hidden" name="_autoresponse" value="Thanks for reaching out to DigitalHub ZA! We’ll get back to you shortly.">
-        <input type="hidden" name="_next" value="https://digitalhubza.co.za/thank-you.html">
-
-
-        <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" name="name" class="form-control" required />
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://media.licdn.com/dms/image/v2/D4E12AQE4iYCPfqXVSA/article-cover_image-shrink_423_752/B4EZVN.tfuG0AU-/0/1740770040573?e=2147483647&v=beta&t=O5xh5gK-XM-WHP9OI4EL60-f06_pP4tGNBOood2hZwc" alt="Data Analysis" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">Data Analysis</h5>
+            <p class="card-text">Business insights through data.</p>
+          </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" name="email" class="form-control" required />
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxtNbPUQcm8Y84zL5g11s5Oj2BsB9xjdwVg&s" alt="Graphic Design" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">Graphic Design</h5>
+            <p class="card-text">Creative visuals for your brand.</p>
+          </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Message</label>
-          <textarea name="message" class="form-control" rows="5" required></textarea>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR36mKCMcSv3S5jjIDVQOxaHudP4z4-tQXkQ&s" alt="SEO Optimization" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">SEO Optimization</h5>
+            <p class="card-text">Improve your search visibility.</p>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvwI_2fxcV-U05za5atF81KsOxS5VNGGNqw&s" alt="Automation" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">Automation</h5>
+            <p class="card-text">Smart process automation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://accountmanagementskills.com/wp-content/uploads/2022/01/Essential-skills-featured-image-1.jpg" alt="Account Management" class="card-img-top rounded-top" />
+          <div class="card-body">
+            <h5 class="card-title">Account Management</h5>
+            <p class="card-text">End-to-end account support.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 DigitalHub ZA | Powered by Innovation
-    <div class="footer-social-icons">
-      <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://wa.me/27767862666" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-    </div>
-  </footer>
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light fade-in-up">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form action="https://formsubmit.co/digitalhubza1@gmail.com" method="POST" class="mx-auto" style="max-width: 600px;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_subject" value="New Inquiry from DigitalHub ZA Website">
+      <input type="hidden" name="_autoresponse" value="Thanks for reaching out to DigitalHub ZA! We’ll get back to you shortly.">
+      <input type="hidden" name="_next" value="https://digitalhubza.co.za/thank-you.html">
 
-</div>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" required placeholder="Your Name" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required placeholder="your@email.com" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea name="message" class="form-control" rows="5" required placeholder="How can we help you?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
 
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  &copy; 2025 DigitalHub ZA | Powered by Innovation
+  <div class="footer-social-icons mt-2">
+    <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="https://wa.me/27767862666" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  </div>
+</footer>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.fade-in-up');
-    const options = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-    sections.forEach(section => {
-      section.style.animationPlayState = 'paused';
-      observer.observe(section);
+  AOS.init();
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
   });
 </script>
