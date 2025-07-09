@@ -190,3 +190,9 @@ section {
 #contact.fade-in-up {
   animation-delay: 0.9s;
 }
+
+.navbar-brand img {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
