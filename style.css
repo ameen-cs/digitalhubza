@@ -297,6 +297,35 @@ footer small {
   .contact-exciting-section {
     padding: 3rem 1rem;
   }
+
+  /* NEW: Stats grid side by side on mobile */
+  .stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin-bottom: 1rem;
+  }
+
+  .stats-grid .stat-card,
+  .tech-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form .form-control {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.6rem;
+    font-size: 1rem;
+  }
 }
 
 /* Scroll To Top Button */
@@ -459,6 +488,10 @@ footer small {
   cursor: default;
   user-select: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Default width for desktop */
+  flex: 1 1 30%;
+  max-width: 30%;
+  margin-bottom: 1.5rem;
 }
 
 /* Hover Animation */
@@ -513,6 +546,33 @@ footer small {
 .tech-link:focus {
   color: #008c7f;
   outline: none;
+}
+
+/* Responsive: 3 cards side-by-side on mobile */
+@media (max-width: 575.98px) {
+  .technologies-grid {
+    gap: 0.75rem;
+  }
+
+  .tech-card {
+    flex: 0 0 calc((100% / 3) - 0.5rem);
+    max-width: calc((100% / 3) - 0.5rem);
+    margin-bottom: 1rem;
+  }
+}
+
+/* Optional fallback: 2 cards side-by-side on very small screens */
+@media (max-width: 350px) {
+  .tech-card {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tech-desc {
+    display: none;
+  }
 }
 
 /* Preloader Overlay */
@@ -616,20 +676,32 @@ footer small {
   }
 }
 
-/* Improve spacing between stacked elements */
-@media (max-width: 768px) {
-  .stats-grid .stat-card,
-  .tech-card {
-    margin-bottom: 1.5rem;
+@media (max-width: 575.98px) {
+  .stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
   }
 
-  .contact-form .form-control {
-    font-size: 0.95rem;
-    padding: 0.7rem 1rem;
+  .stat-card {
+    flex: 0 0 calc((100% / 3) - 0.5rem);
+    max-width: calc((100% / 3) - 0.5rem);
+    padding: 1rem;
+    font-size: 0.9rem;
   }
 
-  .btn-primary {
-    padding: 0.7rem 1.6rem;
-    font-size: 1rem;
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 }
