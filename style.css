@@ -576,3 +576,60 @@ footer small {
   }
 }
 
+/* Extra Mobile Responsiveness */
+@media (max-width: 575.98px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .overview-text {
+    font-size: 1rem;
+  }
+
+  .stats-grid .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .services-grid,
+  .technologies-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-card img {
+    height: 160px;
+  }
+
+  .contact-exciting-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* Improve spacing between stacked elements */
+@media (max-width: 768px) {
+  .stats-grid .stat-card,
+  .tech-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form .form-control {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.6rem;
+    font-size: 1rem;
+  }
+}
