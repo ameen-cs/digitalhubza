@@ -705,3 +705,30 @@ footer small {
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 575.98px) {
+  .contact-form {
+    text-align: left; /* or center if you prefer */
+  }
+
+  /* Make form labels full width and nicely spaced */
+  .contact-form .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-align: left; /* aligns label text left */
+  }
+
+  /* Make inputs and textarea full width and consistent spacing */
+  .contact-form .form-control {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Align button centered */
+  .contact-form button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
