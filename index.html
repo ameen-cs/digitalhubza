@@ -65,14 +65,21 @@
 </head>
 <body>
 
-  <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-content">
       <img src="logo.jpg" alt="DigitalHub ZA Logo" class="preloader-logo" />
       <p class="preloader-text">Empowering Your Digital Future...</p>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
     </div>
+    
+    <!-- Multiple page layers for flipping -->
+    <div class="page-flip page-flip-1"></div>
+    <div class="page-flip page-flip-2"></div>
+    <div class="page-flip page-flip-3"></div>
   </div>
-
+ 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
     <div class="container">
@@ -347,31 +354,29 @@
 </footer>
 
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      duration: 600,
-      easing: 'ease-out-cubic',
-    });
-  </script>
-  <script>
-    window.addEventListener("load", function () {
-      const preloader = document.getElementById("preloader");
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 600,
+    easing: 'ease-out-cubic',
+  });
+</script>
+<script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
   
-      // WAIT 1.5 seconds before starting fade-out
-      setTimeout(() => {
-        preloader.style.opacity = "0";
+    // Show logo + dots for 2.5 seconds
+    setTimeout(() => {
+      preloader.classList.add("flip-away");
   
-        // THEN hide after transition
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 600); // match CSS transition time
-      }, 1500); // give time for animation to finish
-    });
-  </script>
+      // Remove preloader after animation finishes (1s)
+      preloader.addEventListener("animationend", () => {
+        preloader.style.display = "none";
+      }, { once: true });
+    }, 2500);
+  });
   
-</body>
-</html>
+</script>
