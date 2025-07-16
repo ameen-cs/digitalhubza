@@ -369,27 +369,39 @@
 <script>
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
-  
-    // Show logo + dots for 1.2 seconds
+    const video = document.querySelector(".hero-video");
+
+    // Show logo + dots for 1.5 seconds
     setTimeout(() => {
       preloader.classList.add("flip-away");
-  
-      // Remove preloader after animation finishes (1s)
+
+      // When animation ends, hide preloader and ensure video plays
       preloader.addEventListener("animationend", () => {
         preloader.style.display = "none";
+
+        // Try to play video again after preloader is removed
+        if (video) {
+          video.muted = true;
+          video.play().catch((err) => {
+            console.warn("Autoplay blocked:", err);
+          });
+        }
       }, { once: true });
-    }, 1200); // Reduced from 2500 to 1200
+    }, 1500); // 1.5s delay
   });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const video = document.querySelector(".hero-video");
-      if (video) {
-        video.addEventListener("canplaythrough", () => {
-          video.classList.add("loaded");
-        });
-      }
-    });
-  </script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector(".hero-video");
+    if (video) {
+      video.addEventListener("canplaythrough", () => {
+        video.classList.add("loaded");
+      });
+
+      // Pre-load fallback to ensure early buffer
+      video.load();
+    }
+  });
+</script>
+
   
   
