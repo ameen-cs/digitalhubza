@@ -191,7 +191,7 @@
       </a>
 
       <a href="services.html#data-analysis" class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://media.licdn.com/dms/image/v2/D4E12AQE4iYCPfqXVSA/article-cover_image-shrink_423_752/B4EZVN.tfuG0AU-/0/1740770040573?e=2147483647&v=beta&t=O5xh5gK-XM-WHP9OI4EL60-f06_pP4tGNBOood2hZwc" alt="Data Analysis" loading="lazy" />
+        <img src="data-analysis.jpg" alt="Data Analysis" loading="lazy" />
         <h3>Data Analysis</h3>
         <p>Business insights through data.</p>
       </a>
@@ -367,37 +367,26 @@
   });
 </script>
 <script>
-  window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-    const video = document.querySelector(".hero-video");
-
-    // Show logo + dots for 1.5 seconds
-    setTimeout(() => {
-      preloader.classList.add("flip-away");
-
-      // When animation ends, hide preloader and ensure video plays
-      preloader.addEventListener("animationend", () => {
-        preloader.style.display = "none";
-
-        // Try to play video again after preloader is removed
-        if (video) {
-          video.muted = true;
-          video.play().catch((err) => {
-            console.warn("Autoplay blocked:", err);
-          });
-        }
-      }, { once: true });
-    }, 1500); // 1.5s delay
-  });
-
   document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector(".hero-video");
+    const preloader = document.getElementById("preloader");
+
     if (video) {
       video.addEventListener("canplaythrough", () => {
         video.classList.add("loaded");
+
+        // Play video
+        video.muted = true;
+        video.play().catch(err => console.warn("Autoplay blocked:", err));
+
+        // Now safely remove preloader
+        preloader.classList.add("flip-away");
+        preloader.addEventListener("animationend", () => {
+          preloader.style.display = "none";
+        }, { once: true });
       });
 
-      // Pre-load fallback to ensure early buffer
+      // Begin loading early
       video.load();
     }
   });
