@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services | DigitalHub ZA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      color: #00bfa6;
+    }
+
+    /* Sticky header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1.5rem;
+      z-index: 10;
+    }
+
+    .site-header .logo {
+      max-height: 48px;
+      width: auto;
+    }
+
+    /* Hero section moved below sticky header */
+    .hero-section {
+      height: 320px;
+      background: linear-gradient(180deg, rgba(0,191,166,0.7), rgba(0,0,0,0.8)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+      margin-top: 0; /* no extra top padding needed */
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-detail {
+      position: relative;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      outline: none;
+      border: 1px solid #ddd; /* subtle outline */
+    }
+
+    .service-detail:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+      border-color: #00bfa6; /* highlight border on hover */
+    }
+
+    .service-detail:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px #00bfa6;
+      transform: translateY(-8px);
+      border-radius: 16px;
+      border-color: #00bfa6; /* highlight border on focus */
+    }
+
+    .service-detail::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+      z-index: 0;
+      border-radius: 16px;
+    }
+
+    .service-detail > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        text-align: center;
+      }
+      
+
+    .section-text {
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    .section-text ul {
+      margin-top: 0.75rem;
+      padding-left: 1.2rem;
+    }
+
+    .section-text li {
+      margin-bottom: 0.5rem;
+    }
+
+    .bg-website-development::before { background-image: url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg'); }
+    .bg-data-analysis::before { background-image: url('https://media.licdn.com/dms/image/v2/D4E12AQE4iYCPfqXVSA/article-cover_image-shrink_423_752/B4EZVN.tfuG0AU-/0/1740770040573?e=2147483647&v=beta&t=O5xh5gK-XM-WHP9OI4EL60-f06_pP4tGNBOood2hZwc'); }
+    .bg-graphic-design::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxtNbPUQcm8Y84zL5g11s5Oj2BsB9xjdwVg&s'); }
+    .bg-seo-optimization::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR36mKCMcSv3S5jjIDVQOxaHudP4z4-tQXkQ&s'); }
+    .bg-automation::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvwI_2fxcV-U05za5atF81KsOxS5VNGGNqw&s'); }
+    .bg-account-management::before { background-image: url('https://accountmanagementskills.com/wp-content/uploads/2022/01/Essential-skills-featured-image-1.jpg'); }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #00bfa6;
+      color: white;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      margin: 3rem auto 2rem;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,191,166,0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: #009e8b;
+      transform: scale(1.03);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    footer.site-footer {
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-socials a {
+      color: #00bfa6;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: #007d71;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+
+      /* Mobile UX improvements */
+      .service-detail {
+        padding: 1.2rem 1.5rem;
+      }
+
+      .btn-primary {
+        margin-bottom: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <h1 class="hero-title">Our Services</h1>
+    <p class="hero-subtitle">Explore everything we offer to boost your business.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="section-container">
+    <div class="services-grid">
+
+      <article class="service-detail bg-website-development" tabindex="0">
+        <h2 class="section-title">Website Development</h2>
+        <div class="section-text">
+          We build modern, high-performing websites tailored to your brand.
+          <ul>
+            <li>Responsive design for mobile and desktop</li>
+            <li>eCommerce solutions (Shopify, WooCommerce)</li>
+            <li>SEO and speed optimized</li>
+            <li>CMS integration (WordPress, Headless)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-detail bg-data-analysis" tabindex="0">
+        <h2 class="section-title">Data Analysis</h2>
+        <div class="section-text">
+          Transform your raw data into strategic insights.
+          <ul>
+            <li>Interactive dashboards (Power BI, Metabase)</li>
+            <li>Python-based data processing</li>
+            <li>Trend analysis and forecasting</li>
+            <li>Automated reporting</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-detail bg-graphic-design" tabindex="0">
+        <h2 class="section-title">Graphic Design</h2>
+        <div class="section-text">
+          Visually communicate your brand’s message.
+          <ul>
+            <li>Logo and brand identity design</li>
+            <li>Marketing materials (flyers, posters)</li>
+            <li>Social media creatives</li>
+            <li>Infographics and visual storytelling</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-detail bg-seo-optimization" tabindex="0">
+        <h2 class="section-title">SEO Optimization</h2>
+        <div class="section-text">
+          Improve your website’s visibility and Google ranking.
+          <ul>
+            <li>Keyword research and on-page SEO</li>
+            <li>Technical SEO audits and fixes</li>
+            <li>Google Search Console setup</li>
+            <li>Content structure and sitemap creation</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-detail bg-automation" tabindex="0">
+        <h2 class="section-title">Automation</h2>
+        <div class="section-text">
+          Let your systems do the repetitive work for you.
+          <ul>
+            <li>Email and report automation</li>
+            <li>API integrations and workflows</li>
+            <li>Excel and pdf reports</li>
+            <li>Custom Python scripts</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-detail bg-account-management" tabindex="0">
+        <h2 class="section-title">Account Management</h2>
+        <div class="section-text">
+          Simplify your daily operations with our support.
+          <ul>
+            <li>CRM and lead tracking setup</li>
+            <li>Client onboarding and billing</li>
+            <li>Customer communication handling</li>
+            <li>Weekly activity reports</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center">
+      <a href="/#contact" class="btn-primary">Contact Us for a Quote</a><br>
+      <a href="/" class="btn-primary" style="margin-top: 1rem; background-color: #333;">← Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-text">&copy; 2025 DigitalHub ZA. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27767862666" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:digitalhubza1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
