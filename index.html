@@ -102,10 +102,11 @@
 
   <!-- Hero Section -->
   <header class="hero-section d-flex align-items-center justify-content-center text-center">
-    <video autoplay muted loop playsinline class="hero-video" preload="metadata">
+    <video autoplay muted loop playsinline class="hero-video" preload="none" poster="fallback.jpg">
+      <source src="video.webm" type="video/webm" />
       <source src="video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-    </video>
+    </video>    
     <div class="hero-overlay"></div>
     <div class="hero-content px-3" data-aos="fade-up" data-aos-delay="200">
       <h1 class="hero-title">Welcome to DigitalHub ZA</h1>
@@ -117,7 +118,7 @@
   <!-- About Section -->
   <section id="about" class="section-container bg-light" data-aos="fade-up"
   style="
-    background-image: url('https://img.freepik.com/premium-vector/grey-white-abstract-technology-background-hi-tech-digital-connect-communication-high-technology_262356-910.jpg');
+    background-image: url('https://img.freepik.com/premium-vector/abstract-dot-triangle-connection-backgroundvector-illustration_44526-909.jpg?semt=ais_hybrid&w=740');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -304,7 +305,7 @@
               <strong>🕒</strong> Mon – Fri: 8:00 am – 5:00 pm
             </p>
           </address>
-          <a href="#contact" class="btn btn-primary mt-3">Get a Quote</a>
+          <a href="mailto:digitalhubza1@gmail.com?subject=Quote Request from Website&body=Hi DigitalHub ZA,%0D%0A%0D%0AI'd like to request a quote for..." class="btn btn-primary mt-3">Get a Quote</a>
         </div>        
 
         <!-- Contact Form -->
@@ -338,7 +339,7 @@
  <!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-    <small>&copy; 2025 DigitalHub ZA | Powered by Innovation</small>
+    <small>&copy; 2025 DigitalHub ZA | All Rights Reserved</small>
     <div class="footer-social-icons d-flex gap-4 fs-4">
       <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram" class="social-link">
         <i class="bi bi-instagram"></i>
@@ -368,7 +369,7 @@
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
   
-    // Show logo + dots for 2.5 seconds
+    // Show logo + dots for 1.2 seconds
     setTimeout(() => {
       preloader.classList.add("flip-away");
   
@@ -376,7 +377,18 @@
       preloader.addEventListener("animationend", () => {
         preloader.style.display = "none";
       }, { once: true });
-    }, 2500);
+    }, 1500); // Reduced from 2500 to 1500
   });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.querySelector(".hero-video");
+      if (video) {
+        video.addEventListener("canplaythrough", () => {
+          video.classList.add("loaded");
+        });
+      }
+    });
+  </script>
   
-</script>
+  
