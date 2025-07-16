@@ -74,6 +74,16 @@ a:focus {
   filter: brightness(0.35);
   z-index: 0;
 }
+
+.hero-video {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.hero-video.loaded {
+  opacity: 1;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -814,3 +824,4 @@ footer small {
     opacity: 0;
   }
 }
+
