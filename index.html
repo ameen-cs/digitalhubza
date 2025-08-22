@@ -448,21 +448,30 @@
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault(); // stop normal form submission
-      
+  
       const form = e.target;
+      const formData = new FormData(form);
   
       fetch(form.action, {
         method: form.method,
-        body: new FormData(form),
-      }).then(response => {
+        body: formData,
+        headers: { "Accept": "application/json" }, // tell server we want JSON
+        redirect: "follow", // follow redirects
+        mode: "cors"         // handle CORS
+      })
+      .then(response => {
         if (response.ok) {
-          form.reset(); // clear fields
+          form.reset();
           document.getElementById("thankYouMessage").classList.remove("d-none");
         } else {
-          alert("Something went wrong. Please try again.");
+          return response.text().then(text => { 
+            alert("Error: " + text); // show actual error
+          });
         }
-      }).catch(() => {
-        alert("Error submitting form. Please try again later.");
+      })
+      .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Network error. Please try again later.");
       });
     });
   </script>
