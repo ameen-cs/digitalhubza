@@ -309,32 +309,34 @@
           <a href="mailto:digitalhubza1@gmail.com?subject=Quote Request from Website&body=Hi DigitalHub ZA,%0D%0A%0D%0AI'd like to request a quote for..." class="btn btn-primary mt-3">Get a Quote</a>
         </div>        
 
-        <!-- Contact Form -->
-        <div class="col-md-6">
-          <form action="https://formsubmit.co/digitalhubza1@gmail.com" method="POST" class="contact-form bg-white text-dark p-4 rounded-4 shadow-sm">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="box" />
-            <input type="hidden" name="_subject" value="New Inquiry from DigitalHub ZA Website" />
-            <input type="hidden" name="_autoresponse" value="Thanks for reaching out! We'll get back to you shortly." />
-            <input type="hidden" name="_next" value="https://digitalhubza.co.za/thank-you.html" />
-            <div class="mb-3">
-              <label for="name" class="form-label fw-semibold">Full Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label fw-semibold">Email Address</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label fw-semibold">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 fw-semibold">Send Message</button>
-          </form>
-        </div>
-
-      </div>
+<!-- Contact Form -->
+<div class="col-md-6">
+  <form id="contactForm" action="https://formsubmit.co/digitalhubza1@gmail.com" method="POST" class="contact-form bg-white text-dark p-4 rounded-4 shadow-sm">
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="box" />
+    <input type="hidden" name="_subject" value="New Inquiry from DigitalHub ZA Website" />
+    <input type="hidden" name="_autoresponse" value="Thanks for reaching out! We'll get back to you shortly." />
+    
+    <div class="mb-3">
+      <label for="name" class="form-label fw-semibold">Full Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required />
     </div>
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label fw-semibold">Message</label>
+      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 fw-semibold">Send Message</button>
+  </form>
+
+  <!-- Thank You Message -->
+  <div id="thankYouMessage" class="alert alert-success mt-3 d-none" role="alert">
+    ✅ Thank you! Your message has been sent. We'll get back to you shortly.
+  </div>
+</div>
   </section>
 
  <!-- Footer -->
@@ -443,6 +445,27 @@
     }, 100);
   });
   </script>
-
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop normal form submission
+      
+      const form = e.target;
+  
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+      }).then(response => {
+        if (response.ok) {
+          form.reset(); // clear fields
+          document.getElementById("thankYouMessage").classList.remove("d-none");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      }).catch(() => {
+        alert("Error submitting form. Please try again later.");
+      });
+    });
+  </script>
+  
   
   
