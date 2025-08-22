@@ -155,23 +155,23 @@
           <div class="stat-icon mb-3">
             <i class="bi bi-speedometer2"></i>
           </div>
-          <h3 class="stat-number mb-1">100<span class="plus-sign">+</span></h3>
+          <h3 class="stat-number mb-1" data-target="100">0<span class="plus-sign">+</span></h3>
           <p class="stat-label mb-0">Dashboards Delivered</p>
         </div>
-
+      
         <div class="col-6 col-md-3 stat-card p-4 rounded shadow-sm text-center" tabindex="0" data-aos="fade-up" data-aos-delay="300">
           <div class="stat-icon mb-3">
             <i class="bi bi-code-slash"></i>
           </div>
-          <h3 class="stat-number mb-1">50<span class="plus-sign">+</span></h3>
+          <h3 class="stat-number mb-1" data-target="50">0<span class="plus-sign">+</span></h3>
           <p class="stat-label mb-0">Websites Built</p>
         </div>
-
+      
         <div class="col-6 col-md-3 stat-card p-4 rounded shadow-sm text-center" tabindex="0" data-aos="fade-up" data-aos-delay="400">
           <div class="stat-icon mb-3">
             <i class="bi bi-gear-wide-connected"></i>
           </div>
-          <h3 class="stat-number mb-1">100<span class="plus-sign">+</span></h3>
+          <h3 class="stat-number mb-1" data-target="100">0<span class="plus-sign">+</span></h3>
           <p class="stat-label mb-0">Automation Workflows</p>
         </div>
       </div>
@@ -391,6 +391,58 @@
     }
   });
 </script>
+<script>
+  // Counter animation function
+  function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    element.classList.add('counting');
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        element.classList.remove('counting');
+      }
+      
+      // Update the text content, preserving the + sign
+      const plusSign = element.querySelector('.plus-sign');
+      element.childNodes[0].textContent = Math.floor(current);
+    }, 16);
+  }
+  
+  // Intersection Observer for triggering animations
+  function setupCounterObserver() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          const target = parseInt(entry.target.dataset.target);
+          animateCounter(entry.target, target);
+          entry.target.dataset.animated = 'true';
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+  
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+  
+  // Initialize counter animation
+  document.addEventListener('DOMContentLoaded', function() {
+    // Wait for AOS to initialize first
+    setTimeout(() => {
+      setupCounterObserver();
+    }, 100);
+  });
+  </script>
 
   
   
