@@ -90,6 +90,7 @@
       border: none;
       cursor: pointer;
       padding: 4px;
+      z-index: 1001;
     }
 
     .hamburger {
@@ -101,6 +102,14 @@
     }
 
     @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+      }
+
       .nav-menu {
         position: absolute;
         top: 100%;
