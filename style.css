@@ -529,6 +529,8 @@ footer small {
   margin-bottom: 1.5rem;
 }
 
+
+
 /* Hover Animation */
 .process-card:hover,
 .process-card:focus-within {
@@ -887,7 +889,58 @@ footer small {
 .section-title:hover::after {
   width: 30%;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> aa3788e (deployment)
+/* Desktop: 4 equal columns */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: stretch;
+}
+
+.process-card {
+  background: white;
+  border: 2px solid #00bfa6;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 300px;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1200px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: FULL-WIDTH (stretched) */
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr; /* Full width */
+    gap: 1.5rem;
+  }
+
+  .process-card {
+    max-width: none;   /* Remove max-width */
+    margin: 0;         /* Remove centering margin */
+    width: 100%;       /* Stretch to full container */
+    min-height: auto;  /* Allow natural height or keep if needed */
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+
+
+
+
