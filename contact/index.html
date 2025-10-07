@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZLNJFNNX3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WZLNJFNNX3');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | DigitalHub ZA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS (for form styling) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: url('https://img.freepik.com/free-vector/abstract-background-with-hexagons_23-2148995949.jpg?semt=ais_hybrid&w=740&q=80') center/cover fixed no-repeat;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      color: #00bfa6;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .site-nav {
+      background-color: #121212;
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #00bfa6;
+      text-decoration: underline;
+    }
+
+    /* Hamburger Button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger {
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: #121212;
+        border: 1px solid #333;
+        border-top: 3px solid #00bfa6;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        min-width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+
+      .nav-menu .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero-section {
+      height: 300px;
+      background: linear-gradient(180deg, rgba(0,191,166,0.7), rgba(0,0,0,0.8)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .section-container {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .contact-info h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      color: #00bfa6;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-icon {
+      font-size: 1.4rem;
+      color: #00bfa6;
+      margin-right: 1rem;
+      min-width: 24px;
+      margin-top: 4px;
+    }
+
+    .contact-text h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .contact-text p, .contact-text a {
+      margin: 0;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    /* Contact Form Wrapper */
+    .contact-form-wrapper {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .contact-form h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    /* Override FormSubmit Button to Green */
+    .formsubmit-btn,
+    .contact-form .btn-primary {
+      background-color: #00bfa6 !important;
+      border-color: #00bfa6 !important;
+      color: white !important;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 6px 15px rgba(0,191,166,0.3) !important;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .formsubmit-btn:hover,
+    .contact-form .btn-primary:hover {
+      background-color: #009e8b !important;
+      transform: scale(1.03);
+    }
+
+    /* Thank You Message */
+    .alert-success {
+      background-color: #d1f7e6 !important;
+      color: #00796b !important;
+      border-color: #00bfa6 !important;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer.site-footer {
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-socials a {
+      color: #00bfa6;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: #007d71;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+      .contact-form-wrapper, .contact-info {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo-link" aria-label="Home">
+        <img src="../logo1.webp" alt="DigitalHub ZA Logo" class="nav-logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li><a href="/services/" class="nav-link">Services</a></li>
+        <li><a href="/process/" class="nav-link">Process</a></li>
+        <li><a href="/contact/" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <h1 class="hero-title">Get in Touch</h1>
+    <p class="hero-subtitle">We’d love to hear from you. Reach out today!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-container" id="contact">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-text">
+            <h3>Location</h3>
+            <p>South Africa</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-text">
+            <h3>Phone</h3>
+            <p><a href="tel:+27767862666">+27 76 786 2666</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h3>Email</h3>
+            <p><a href="mailto:digitalhubza1@gmail.com">digitalhubza1@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-text">
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/27767862666" target="_blank">Chat on WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form (Updated with green button) -->
+      <div class="contact-form-wrapper">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm" action="https://formsubmit.co/digitalhubza1@gmail.com" method="POST" class="contact-form bg-white text-dark p-4 rounded-4 shadow-sm">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="box" />
+          <input type="hidden" name="_subject" value="New Inquiry from DigitalHub ZA Website" />
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! We'll get back to you shortly." />
+
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 fw-semibold">Send Message</button>
+        </form>
+
+        <!-- Thank You Message -->
+        <div id="thankYouMessage" class="alert alert-success mt-3 d-none" role="alert">
+          ✅ Thank you! Your message has been sent. We'll get back to you shortly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-text">&copy; 2025 DigitalHub ZA. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27767862666" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:digitalhubza1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+
+      // Close menu on link click (mobile)
+      document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            menu.classList.remove('active');
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
+      });
+
+      // Form submission with thank-you message
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { "Accept": "application/json" },
+          redirect: "follow",
+          mode: "cors"
+        })
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            document.getElementById("thankYouMessage").classList.remove("d-none");
+          } else {
+            return response.text().then(text => { 
+              alert("Error: " + text);
+            });
+          }
+        })
+        .catch(error => {
+          console.error("Fetch error:", error);
+          alert("Network error. Please try again later.");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZLNJFNNX3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WZLNJFNNX3');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Process | DigitalHub ZA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: url('https://img.freepik.com/free-vector/abstract-background-with-hexagons_23-2148995949.jpg?semt=ais_hybrid&w=740&q=80') center/cover fixed no-repeat;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      color: #00bfa6;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background-color: #121212;
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #00bfa6;
+      text-decoration: underline;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger {
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: #121212;
+        border: 1px solid #333;
+        border-top: 3px solid #00bfa6;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        min-width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+
+      .nav-menu .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+      }
+
+      .nav-link::after {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero-section {
+      height: 300px;
+      background: linear-gradient(180deg, rgba(0,191,166,0.7), rgba(0,0,0,0.8)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* Section */
+    .section-container {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #121212;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #00bfa6;
+      border-radius: 3px;
+    }
+
+    /* Process Grid - 2x2 Layout */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .process-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 3px solid #00bfa6;
+    }
+
+    .process-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,191,166,0.15);
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: #00bfa6;
+      color: white;
+      border-radius: 50%;
+      line-height: 50px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .process-card h3 {
+      font-size: 1.4rem;
+      margin: 1rem 0 0.8rem;
+      color: #121212;
+    }
+
+    .process-card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* CTA */
+    .text-center {
+      text-align: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #00bfa6;
+      color: white;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      margin: 2rem auto;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,191,166,0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: #009e8b;
+      transform: scale(1.03);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-socials a {
+      color: #00bfa6;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: #007d71;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+      .process-card { padding: 1.5rem; }
+      .step-number { width: 44px; height: 44px; line-height: 44px; font-size: 1.2rem; }
+      .process-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo-link" aria-label="Home">
+        <img src="../logo1.webp" alt="DigitalHub ZA Logo" class="nav-logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/about/" class="nav-link">About</a></li>
+        <li><a href="/services/" class="nav-link">Services</a></li>
+        <li><a href="/process/" class="nav-link">Process</a></li>
+        <li><a href="/contact/" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <h1 class="hero-title">Our Process</h1>
+    <p class="hero-subtitle">Simple, transparent, and built for your success.</p>
+  </section>
+
+  <!-- Process Steps - 2x2 Grid -->
+  <section class="section-container">
+    <h2 class="section-title">How We Work</h2>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="step-number">1</div>
+        <h3>Discover</h3>
+        <p>We start with a free 15-minute call to understand your goals, challenges, and vision.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">2</div>
+        <h3>Plan</h3>
+        <p>We provide a clear scope, timeline, and fixed-price quote—no surprises.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">3</div>
+        <h3>Build</h3>
+        <p>Our team develops your solution with weekly updates via WhatsApp or email.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">4</div>
+        <h3>Launch & Support</h3>
+        <p>We hand over your project with training and offer 30 days of free support.</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="/contact/" class="btn-primary">Start Your Project Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-text">&copy; 2025 DigitalHub ZA. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27767862666" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:digitalhubza1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            menu.classList.remove('active');
+          }
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
