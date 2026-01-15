@@ -27,7 +27,7 @@ This is a **custom-built, responsive, single-page marketing website** designed t
 - **Services**: 6 service cards (Web Dev, Data Analysis, Graphic Design, SEO, Automation, Account Management).
 - **Process**: 4-step client journey (Discover → Plan → Build → Launch).
 - **Contact**: Phone, email, hours + embedded contact form with auto-response.
-- **Forex**: Live exchange rates(Gold & Silver)
+- **Forex**: Live Gold, Silver & Exchange Rates.
 - **Footer**: Copyright + social links (Facebook, Instagram, WhatsApp).
 
 ### ✅ Technical Highlights
