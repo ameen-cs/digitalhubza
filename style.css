@@ -46,7 +46,7 @@ a:focus {
 .nav-link:focus,
 .nav-link.active {
   color: #00bfa6;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
