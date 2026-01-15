@@ -11,18 +11,12 @@ This is a **custom-built, responsive, single-page marketing website** designed t
 
 ---
 ## 🎯 Core Focus Areas
-    Website Development
-    – Custom, responsive, and scalable websites built with modern UI/UX principles.
-    Automation
-    – Streamlining business workflows using smart automation tools to save time and reduce errors.
-    Data Analytics
-    – Transforming raw data into actionable insights using tools like Power BI, SQL, and Metabase.
-    Graphic & UI/UX Design
-    – Creating visually compelling and user-friendly digital experiences using tools like Figma.
-    SEO Optimization
-    – Improving online visibility and organic traffic through technical and content-based SEO.
-    Account Management
-    – Providing end-to-end client support and strategic guidance throughout the project lifecycle.
+- **Website Development**: Custom, responsive, and scalable websites built with modern UI/UX principles.
+- **Automation**: Streamlining business workflows using smart automation tools to save time and reduce errors.
+- **Data Analytics**: Transforming raw data into actionable insights using tools like Power BI, SQL, and Metabase.
+- **Graphic & UI/UX Design**: Creating visually compelling and user-friendly digital experiences using tools like Figma.
+- **SEO Optimization**: Improving online visibility and organic traffic through technical and content-based SEO.
+- **Account Management**: Providing end-to-end client support and strategic guidance throughout the project lifecycle.
     
 ---
 ## 🛠️ Key Features
@@ -33,6 +27,7 @@ This is a **custom-built, responsive, single-page marketing website** designed t
 - **Services**: 6 service cards (Web Dev, Data Analysis, Graphic Design, SEO, Automation, Account Management).
 - **Process**: 4-step client journey (Discover → Plan → Build → Launch).
 - **Contact**: Phone, email, hours + embedded contact form with auto-response.
+- **Forex**: Live exchange rates(Gold & Silver)
 - **Footer**: Copyright + social links (Facebook, Instagram, WhatsApp).
 
 ### ✅ Technical Highlights
