@@ -110,7 +110,7 @@
           <li><a href="/services/" class="nav-link">Services</a></li>
           <li><a href="/process/" class="nav-link">Process</a></li>
           <li><a href="/contact/" class="nav-link">Contact</a></li>
-          <li><a href="/forex/" class="nav-link active">Forex</a></li>
+          <li><a href="/forex/" class="nav-link">Forex</a></li>
         </ul>
       </div>
     </div>
@@ -125,6 +125,7 @@
     </video>    
     <div class="hero-overlay"></div>
     <div class="hero-content px-3" data-aos="fade-up" data-aos-delay="200">
+      <div class="hero-badge">South Africa's Digital Partner</div>
       <h1 class="hero-title">Welcome to DigitalHub ZA</h1>
       <p class="hero-subtitle mb-4">Your all-in-one digital partner</p>
       <a href="#services" class="btn btn-primary btn-lg shadow">Explore Services</a>
@@ -337,10 +338,17 @@
   <div id="thankYouMessage" class="alert alert-success mt-3 d-none" role="alert">
     ✅ Thank you! Your message has been sent. We'll get back to you shortly.
   </div>
-</div>
+</div><!-- end .col-md-6 -->
+      </div><!-- end .row -->
+    </div><!-- end .container -->
   </section>
 
   
+<!-- Scroll To Top Button -->
+<button id="scrollToTopBtn" aria-label="Scroll to top" title="Scroll to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
@@ -477,9 +485,31 @@
       });
     });
   </script>
+  <script>
+    // Navbar glassmorphism on scroll
+    (function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      window.addEventListener('scroll', function () {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+    })();
+
+    // Scroll To Top Button
+    (function () {
+      const btn = document.getElementById('scrollToTopBtn');
+      if (!btn) return;
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('show', window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 
 </body>
-<html>
+</html>
 
  
   
