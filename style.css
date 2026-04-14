@@ -1,3 +1,15 @@
+/* CSS Custom Properties */
+:root {
+  --teal: #00bfa6;
+  --teal-dark: #008c7f;
+  --teal-deep: #004d40;
+  --dark: #121212;
+  --radius-card: 16px;
+  --transition: 0.3s ease;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-teal: 0 8px 24px rgba(0, 191, 166, 0.35);
+}
+
 /* Reset & Base */
 *,
 *::before,
@@ -114,22 +126,25 @@ a:focus {
 
 /* Buttons */
 .btn-primary {
-  background-color: #00bfa6;
+  background: linear-gradient(135deg, #00bfa6, #00d4b8);
   border: none;
   font-weight: 700;
   padding: 0.85rem 2rem;
   font-size: 1.1rem;
   border-radius: 40px;
-  box-shadow: 0 6px 15px rgba(0,191,166,0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 191, 166, 0.4);
+  transition: all 0.3s ease;
   display: inline-block;
   cursor: pointer;
+  letter-spacing: 0.02em;
+  color: #fff;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #008c7f;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,140,127,0.6);
+  background: linear-gradient(135deg, #008c7f, #00bfa6);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 140, 127, 0.55);
+  color: #fff;
 }
 .btn-primary:focus-visible {
   outline: 3px solid #008c7f;
@@ -281,6 +296,7 @@ a:focus {
 footer {
   background-color: #121212;
   color: #bbb;
+  border-top: 1px solid rgba(0, 191, 166, 0.18);
 }
 .footer-social-icons a {
   color: #bbb;
@@ -878,7 +894,7 @@ footer small {
   transform: translateX(-50%);
   width: 20%; /* adjust to make shorter: 30%, 50%, etc. */
   height: 3px;
-  background-color: #070707;
+  background: linear-gradient(90deg, #00bfa6, #00d4b8);
   border-radius: 3px;
 
   /* Optional: smooth hover effect */
@@ -940,7 +956,117 @@ footer small {
   }
 }
 
+/* ===========================
+   Modern Additions
+=========================== */
 
+/* Navbar Glassmorphism on Scroll */
+.navbar.scrolled {
+  background-color: rgba(18, 18, 18, 0.92) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(0, 191, 166, 0.14);
+}
 
+/* Hero Badge / Pill */
+.hero-badge {
+  display: inline-block;
+  background: rgba(0, 191, 166, 0.12);
+  border: 1px solid rgba(0, 191, 166, 0.45);
+  color: #00bfa6;
+  padding: 0.4rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(6px);
+}
 
+/* Nav Active Link Underline Indicator */
+.navbar-nav .nav-link.active {
+  position: relative;
+}
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00bfa6, #00d4b8);
+  border-radius: 2px;
+}
+
+/* Process Card Link Reset */
+.process-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Services Section Subtle Background */
+#services {
+  background-color: #f4f9f8;
+}
+
+/* Process Step Watermark Numbers */
+.process-grid {
+  counter-reset: step;
+}
+.process-card {
+  overflow: hidden;
+}
+.process-card::after {
+  counter-increment: step;
+  content: "0" counter(step);
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(0, 191, 166, 0.07);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Service Card: teal top accent stripe */
+.service-card {
+  border-top: 3px solid #00bfa6;
+}
+.service-card img {
+  border-bottom: none;
+}
+
+/* About section image column min height */
+#about .col-md-6 > div[style] {
+  min-height: 280px;
+}
+
+/* Stat card refinement */
+.stat-card {
+  background: linear-gradient(145deg, #e8faf8, #d0f2ee);
+  border: 1px solid rgba(0, 191, 166, 0.2);
+}
+
+/* Contact address link hover */
+.contact-exciting-section address a:hover {
+  color: #00bfa6;
+  text-decoration: underline;
+}
+
+/* Footer social icon size bump */
+.footer-social-icons {
+  font-size: 1.4rem;
+}
+.footer-social-icons a {
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+.footer-social-icons a:hover {
+  transform: translateY(-3px);
+}
 
