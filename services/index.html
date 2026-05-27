@@ -13,349 +13,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Services | DigitalHub ZA</title>
+  <meta name="description" content="Explore DigitalHub ZA's services: web development, data analysis, graphic design, SEO, automation and account management." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: url('https://img.freepik.com/free-vector/abstract-background-with-hexagons_23-2148995949.jpg?semt=ais_hybrid&w=740&q=80') center/cover fixed no-repeat;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    a:hover {
-      color: #00bfa6;
-    }
-
-    /* === Navigation Bar === */
-    .site-nav {
-      position: sticky;
-      top: 0;
-      background-color: #121212;
-      padding: 0.8rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      border-radius: 4px;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      font-weight: 600;
-      color: #ddd;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      color: #00bfa6;
-    }
-
-    .nav-link:hover::after,
-    .nav-link:focus::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #00bfa6;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger {
-      width: 24px;
-      height: 2px;
-      background-color: #fff;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-
-    /* Mobile Menu */
-    @media (max-width: 768px) {
-      .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        background: #121212;
-        border: 1px solid #333;
-        border-top: 3px solid #00bfa6;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        min-width: 220px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-menu li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-      }
-
-      .nav-menu .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-link::after {
-        display: none;
-      }
-    }
-
-    /* === Hero Section === */
-    .hero-section {
-      height: 380px;
-      background: linear-gradient(160deg, rgba(0, 75, 65, 0.88), rgba(0, 0, 0, 0.82)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 1rem;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(0, 191, 166, 0.15);
-      border: 1px solid rgba(0, 191, 166, 0.5);
-      color: #00bfa6;
-      padding: 0.35rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-      letter-spacing: 0.02em;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-top: 0.6rem;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-      opacity: 0.9;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-detail {
-      position: relative;
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      outline: none;
-      border: 1px solid #ddd;
-    }
-
-    .service-detail:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 40px rgba(0,0,0,0.12);
-      border-color: #00bfa6;
-    }
-
-    .service-detail:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px #00bfa6;
-      transform: translateY(-8px);
-      border-radius: 16px;
-      border-color: #00bfa6;
-    }
-
-    .service-detail::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.12;
-      z-index: 0;
-      border-radius: 16px;
-    }
-
-    .service-detail > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      text-align: center;
-    }
-
-    .section-text {
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    .section-text ul {
-      margin-top: 0.75rem;
-      padding-left: 1.2rem;
-    }
-
-    .section-text li {
-      margin-bottom: 0.5rem;
-    }
-
-    .bg-website-development::before { background-image: url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg'); }
-    .bg-data-analysis::before { background-image: url('../data-analysis.jpg'); }
-    .bg-graphic-design::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxtNbPUQcm8Y84zL5g11s5Oj2BsB9xjdwVg&s'); }
-    .bg-seo-optimization::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR36mKCMcSv3S5jjIDVQOxaHudP4z4-tQXkQ&s'); }
-    .bg-automation::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvwI_2fxcV-U05za5atF81KsOxS5VNGGNqw&s'); }
-    .bg-account-management::before { background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHs31eWWY-qIavJupSZGDOX0e6yH5aGwWCQ&s'); }
-
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, #00bfa6, #00d4b8);
-      color: white;
-      font-weight: 700;
-      padding: 0.85rem 2.25rem;
-      border-radius: 40px;
-      margin: 3rem auto 2rem;
-      font-size: 1.05rem;
-      transition: all 0.3s ease;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(0, 191, 166, 0.4);
-      letter-spacing: 0.02em;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #008c7f, #00bfa6);
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 10px 28px rgba(0, 140, 127, 0.5);
-      color: white;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    footer.site-footer {
-      background: #121212;
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-top: 4rem;
-      border-top: 1px solid rgba(0, 191, 166, 0.18);
-    }
-
-    .footer-text {
-      font-size: 0.95rem;
-      color: #aaa;
-      margin-bottom: 1rem;
-    }
-
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 1.4rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer-socials a {
-      color: #aaa;
-      font-size: 1.4rem;
-      transition: color 0.3s, transform 0.25s;
-      display: inline-block;
-    }
-
-    .footer-socials a:hover {
-      color: #00bfa6;
-      transform: translateY(-3px);
-    }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.2rem; }
-      .hero-subtitle { font-size: 1.1rem; }
-      .service-detail { padding: 1.2rem 1.5rem; }
-      .btn-primary { margin-bottom: 1.2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../logo.jpg" type="image/x-icon" />
 </head>
-<body>
+<body class="subpage">
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -370,26 +39,26 @@
       </button>
       <ul class="nav-menu">
         <li><a href="/about/" class="nav-link">About</a></li>
-        <li><a href="/services/" class="nav-link">Services</a></li>
+        <li><a href="/services/" class="nav-link active">Services</a></li>
         <li><a href="/process/" class="nav-link">Process</a></li>
         <li><a href="/contact/" class="nav-link">Contact</a></li>
-        <li><a href="/forex/" class="nav-link active">Forex</a></li>
+        <li><a href="/forex/" class="nav-link">Forex</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero-section">
+  <section class="subpage-hero">
     <div class="hero-badge">What We Offer</div>
-    <h1 class="hero-title">Our Services</h1>
-    <p class="hero-subtitle">Explore everything we offer to boost your business.</p>
+    <h1 class="hero-title">Our <span class="accent">Services</span></h1>
+    <p class="hero-subtitle">End-to-end digital solutions tailored to grow your business.</p>
   </section>
 
   <!-- Services -->
   <section class="section-container">
-    <div class="services-grid">
-      <article id="website-development" class="service-detail bg-website-development" tabindex="0">
-        <h2 class="section-title">Website Development</h2>
+    <div class="services-grid-detail">
+      <article id="website-development" class="service-detail" tabindex="0">
+        <h2>Website Development</h2>
         <div class="section-text">
           We build modern, high-performing websites tailored to your brand.
           <ul>
@@ -401,8 +70,8 @@
         </div>
       </article>
 
-      <article id="data-analysis" class="service-detail bg-data-analysis" tabindex="0">
-        <h2 class="section-title">Data Analysis</h2>
+      <article id="data-analysis" class="service-detail" tabindex="0">
+        <h2>Data Analysis</h2>
         <div class="section-text">
           Transform your raw data into strategic insights.
           <ul>
@@ -414,10 +83,10 @@
         </div>
       </article>
 
-      <article id="graphic-design" class="service-detail bg-graphic-design" tabindex="0">
-        <h2 class="section-title">Graphic Design</h2>
+      <article id="graphic-design" class="service-detail" tabindex="0">
+        <h2>Graphic Design</h2>
         <div class="section-text">
-          Visually communicate your brand’s message.
+          Visually communicate your brand&rsquo;s message.
           <ul>
             <li>Logo and brand identity design</li>
             <li>Marketing materials (flyers, posters)</li>
@@ -427,10 +96,10 @@
         </div>
       </article>
 
-      <article id="seo-optimization" class="service-detail bg-seo-optimization" tabindex="0">
-        <h2 class="section-title">SEO Optimization</h2>
+      <article id="seo-optimization" class="service-detail" tabindex="0">
+        <h2>SEO Optimization</h2>
         <div class="section-text">
-          Improve your website’s visibility and Google ranking.
+          Improve your website&rsquo;s visibility and Google ranking.
           <ul>
             <li>Keyword research and on-page SEO</li>
             <li>Technical SEO audits and fixes</li>
@@ -440,21 +109,21 @@
         </div>
       </article>
 
-      <article id="automation" class="service-detail bg-automation" tabindex="0">
-        <h2 class="section-title">Automation</h2>
+      <article id="automation" class="service-detail" tabindex="0">
+        <h2>Automation</h2>
         <div class="section-text">
           Let your systems do the repetitive work for you.
           <ul>
             <li>Email and report automation</li>
             <li>API integrations and workflows</li>
-            <li>Excel and pdf reports</li>
+            <li>Excel and PDF reports</li>
             <li>Custom Python scripts</li>
           </ul>
         </div>
       </article>
 
-      <article id="account-management" class="service-detail bg-account-management" tabindex="0">
-        <h2 class="section-title">Account Management</h2>
+      <article id="account-management" class="service-detail" tabindex="0">
+        <h2>Account Management</h2>
         <div class="section-text">
           Simplify your daily operations with our support.
           <ul>
@@ -466,11 +135,11 @@
         </div>
       </article>
     </div>
-  </section>
 
-  <div class="text-center">
-    <a href="/#contact" class="btn-primary">Contact Us for a Quote</a><br>
-  </div>
+    <div class="text-center">
+      <a href="/#contact" class="btn-primary">Contact Us for a Quote</a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -483,36 +152,29 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Toggle Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.nav-toggle');
       const menu = document.querySelector('.nav-menu');
+      const nav = document.querySelector('.site-nav');
 
       if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', !isExpanded);
-          menu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked (mobile only)
+        toggle.addEventListener('click', () => menu.classList.toggle('active'));
         document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
           link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-              menu.classList.remove('active');
-              toggle.setAttribute('aria-expanded', 'false');
-            }
+            if (window.innerWidth <= 768) menu.classList.remove('active');
           });
         });
-
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
           if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
             menu.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
           }
         });
+      }
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
       }
     });
   </script>

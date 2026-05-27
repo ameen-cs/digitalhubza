@@ -12,326 +12,19 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Live Gold, Silver & Exchange Rates | DigitalHub ZA</title>
+  <title>Live Gold, Silver &amp; Exchange Rates | DigitalHub ZA</title>
+  <meta name="description" content="Live gold, silver and foreign exchange rates in South African Rand." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: url('https://img.freepik.com/free-vector/abstract-background-with-hexagons_23-2148995949.jpg?semt=ais_hybrid&w=740&q=80') center/cover fixed no-repeat;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    a:hover {
-      color: #00bfa6;
-    }
-
-    /* Navigation */
-    .site-nav {
-      background-color: #121212;
-      padding: 0.8rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      border-radius: 4px;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      font-weight: 600;
-      color: #ddd;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      color: #00bfa6;
-      text-decoration: underline;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 1001;
-    }
-
-    .hamburger {
-      width: 24px;
-      height: 2px;
-      background-color: #fff;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-      }
-
-      .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        background: #121212;
-        border: 1px solid #333;
-        border-top: 3px solid #00bfa6;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        min-width: 220px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-menu li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-      }
-
-      .nav-menu .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-      }
-    }
-
-    /* Hero */
-    .hero-section {
-      height: 300px;
-      background: linear-gradient(180deg, rgba(0,191,166,0.7), rgba(0,0,0,0.8)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 1rem;
-    }
-
-    .hero-title {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-top: 0.5rem;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
-
-    /* Section */
-    .section-container {
-      max-width: 1100px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      color: #121212;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #00bfa6;
-      border-radius: 3px;
-    }
-
-    /* Cards Grid */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .rate-card,
-    .metal-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-top: 3px solid #00bfa6;
-    }
-
-    .metal-card.gold { border-top-color: #ca8a04; }
-    .metal-card.silver { border-top-color: #0891b2; }
-
-    .rate-card:hover,
-    .metal-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0,191,166,0.15);
-    }
-
-    .card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
-      color: #00bfa6;
-    }
-
-    .metal-card.gold .card-icon { color: #ca8a04; }
-    .metal-card.silver .card-icon { color: #0891b2; }
-
-    .card-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0.8rem 0;
-      color: #121212;
-    }
-
-    .premium-note {
-      font-size: 0.85rem;
-      color: #666;
-      font-style: italic;
-      margin-top: 0.5rem;
-    }
-
-    .metal-card.gold .premium-note { color: #975a02; }
-    .metal-card.silver .premium-note { color: #0e7490; }
-
-    .timestamp {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 1.5rem;
-    }
-
-    .message {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    .error {
-      color: #d32f2f;
-      background: #ffebee;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem auto;
-      max-width: 600px;
-    }
-
-    .forex-note {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 1rem;
-    }
-
-    /* Footer */
-    footer.site-footer {
-      background: #f5f5f5;
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-top: 4rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .footer-text {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer-socials a {
-      color: #00bfa6;
-      font-size: 1.4rem;
-      transition: color 0.3s;
-    }
-
-    .footer-socials a:hover {
-      color: #007d71;
-    }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.2rem; }
-      .hero-subtitle { font-size: 1.1rem; }
-      .metal-card, .rate-card { padding: 1.5rem; }
-      .card-value { font-size: 1.5rem; }
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../logo.jpg" type="image/x-icon" />
 </head>
-<body>
+<body class="subpage">
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -355,9 +48,10 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero-section">
-    <h1 class="hero-title">Live Market Rates</h1>
-    <p class="hero-subtitle">Gold, Silver & Forex</p>
+  <section class="subpage-hero">
+    <div class="hero-badge">Market Watch</div>
+    <h1 class="hero-title">Live <span class="accent">Market Rates</span></h1>
+    <p class="hero-subtitle">Gold, silver and foreign exchange rates in South African Rand.</p>
   </section>
 
   <!-- Main Content -->
@@ -372,14 +66,14 @@
         <div class="metal-card gold">
           <div class="card-icon"><i class="fas fa-coins"></i></div>
           <h3>Gold (1oz)</h3>
-          <div class="card-value" id="goldZAR">R—</div>
-          <div class="premium-note">+7% 📈</div>
+          <div class="card-value" id="goldZAR">R&mdash;</div>
+          <div class="premium-note">+7% <i class="bi bi-graph-up-arrow"></i></div>
         </div>
         <div class="metal-card silver">
           <div class="card-icon"><i class="fas fa-gem"></i></div>
           <h3>Silver (1oz)</h3>
-          <div class="card-value" id="silverZAR">R—</div>
-          <div class="premium-note">+45% 📈</div>
+          <div class="card-value" id="silverZAR">R&mdash;</div>
+          <div class="premium-note">+45% <i class="bi bi-graph-up-arrow"></i></div>
         </div>
       </div>
     </div>
@@ -393,7 +87,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-text">&copy; <span id="year">2025</span> DigitalHub ZA. All rights reserved.</div>
+    <div class="footer-text">&copy; <span id="year">2026</span> DigitalHub ZA. All rights reserved.</div>
     <div class="footer-socials">
       <a href="https://www.facebook.com/61576377698240" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/digitalhub_za" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -405,17 +99,13 @@
   <!-- Scripts -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const CACHE_DURATION_MS = 12 * 60 * 60 * 1000; // 12 hours
+    const CACHE_DURATION_MS = 12 * 60 * 60 * 1000;
 
     function updateTimestamp() {
       const now = new Date();
-      const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+      const options = {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
       };
       document.getElementById('timestamp').textContent = now.toLocaleString('en-ZA', options);
     }
@@ -433,10 +123,7 @@
     }
 
     function setCachedData(key, data) {
-      localStorage.setItem(key, JSON.stringify({
-        data,
-        timestamp: Date.now()
-      }));
+      localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() }));
     }
 
     function formatCacheAge(timestamp) {
@@ -499,7 +186,7 @@
             throw new Error('Forex API error');
           }
         } catch (e) {
-          errorEl.textContent = '❌ Failed to load exchange rates.';
+          errorEl.textContent = 'Failed to load exchange rates.';
           errorEl.style.display = 'block';
           console.error(e);
           loading.style.display = 'none';
@@ -542,29 +229,28 @@
 
     fetchAllData();
 
-    // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.nav-toggle');
       const menu = document.querySelector('.nav-menu');
+      const nav = document.querySelector('.site-nav');
 
       if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('active');
-        });
-
+        toggle.addEventListener('click', () => menu.classList.toggle('active'));
         document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
           link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-              menu.classList.remove('active');
-            }
+            if (window.innerWidth <= 768) menu.classList.remove('active');
           });
         });
-
         document.addEventListener('click', (e) => {
           if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
             menu.classList.remove('active');
           }
         });
+      }
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
       }
     });
   </script>

@@ -13,299 +13,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | DigitalHub ZA</title>
+  <meta name="description" content="Learn about DigitalHub ZA — a boutique South African digital agency specializing in web development, automation, analytics and design." />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: url('https://img.freepik.com/free-vector/abstract-background-with-hexagons_23-2148995949.jpg?semt=ais_hybrid&w=740&q=80') center/cover fixed no-repeat;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    a:hover {
-      color: #00bfa6;
-    }
-
-    /* Navigation */
-    .site-nav {
-      background-color: #121212;
-      padding: 0.8rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      border-radius: 4px;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      font-weight: 600;
-      color: #ddd;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      color: #00bfa6;
-      text-decoration: underline;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger {
-      width: 24px;
-      height: 2px;
-      background-color: #fff;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        background: #121212;
-        border: 1px solid #333;
-        border-top: 3px solid #00bfa6;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        min-width: 220px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-menu li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-      }
-
-      .nav-menu .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-link::after {
-        display: none;
-      }
-    }
-
-    /* Hero */
-    .hero-section {
-      height: 300px;
-      background: linear-gradient(180deg, rgba(0,191,166,0.7), rgba(0,0,0,0.8)), url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/10/Website-Development.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 1rem;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-top: 0.5rem;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
-
-    /* Section */
-    .section-container {
-      max-width: 1100px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #121212;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #00bfa6;
-      border-radius: 3px;
-    }
-
-    .about-content {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .stat-card {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      min-width: 140px;
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #00bfa6;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    /* CTA Button */
-    .btn-primary {
-      display: inline-block;
-      background-color: #00bfa6;
-      color: white;
-      font-weight: 600;
-      padding: 0.85rem 2rem;
-      border-radius: 30px;
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      transition: 0.3s ease;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,191,166,0.3);
-    }
-
-    .btn-primary:hover {
-      background-color: #009e8b;
-      transform: scale(1.03);
-    }
-
-    /* Footer */
-    footer.site-footer {
-      background: #f5f5f5;
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-top: 4rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .footer-text {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer-socials a {
-      color: #00bfa6;
-      font-size: 1.4rem;
-      transition: color 0.3s;
-    }
-
-    .footer-socials a:hover {
-      color: #007d71;
-    }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.2rem; }
-      .hero-subtitle { font-size: 1.1rem; }
-      .about-content { padding: 1.5rem; }
-      .stat-card { min-width: 120px; padding: 1rem; }
-    }
-  </style>
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../logo.jpg" type="image/x-icon" />
 </head>
-<body>
+<body class="subpage">
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -319,18 +40,19 @@
         <span class="hamburger"></span>
       </button>
       <ul class="nav-menu">
-        <li><a href="/about/" class="nav-link">About</a></li>
+        <li><a href="/about/" class="nav-link active">About</a></li>
         <li><a href="/services/" class="nav-link">Services</a></li>
         <li><a href="/process/" class="nav-link">Process</a></li>
         <li><a href="/contact/" class="nav-link">Contact</a></li>
-        <li><a href="/forex/" class="nav-link active">Forex</a></li>
+        <li><a href="/forex/" class="nav-link">Forex</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero-section">
-    <h1 class="hero-title">About DigitalHub ZA</h1>
+  <section class="subpage-hero">
+    <div class="hero-badge">Who We Are</div>
+    <h1 class="hero-title">About <span class="accent">DigitalHub ZA</span></h1>
     <p class="hero-subtitle">Empowering South African businesses through digital innovation.</p>
   </section>
 
@@ -341,13 +63,12 @@
         Founded in South Africa, <strong>DigitalHub ZA</strong> is a boutique digital solutions agency dedicated to helping South African SMEs thrive in the digital age. We combine technical expertise with a deep understanding of local business challenges to deliver tailored, scalable, and future-proof solutions.
       </p>
       <p>
-        Our team specializes in <strong>website development</strong>, <strong>data analytics</strong>, <strong>process automation</strong>, and <strong>creative design</strong>—all designed to save you time, reduce costs, and drive growth. We believe technology should simplify, not complicate—and we’re here to make it work for you.
+        Our team specializes in <strong>website development</strong>, <strong>data analytics</strong>, <strong>process automation</strong>, and <strong>creative design</strong> — all designed to save you time, reduce costs, and drive growth. We believe technology should simplify, not complicate, and we&rsquo;re here to make it work for you.
       </p>
       <p>
-        With a client-first approach and a passion for clean, efficient code, we’ve helped over 50 businesses transform their operations and reach new customers—without the jargon or hidden fees.
+        With a client-first approach and a passion for clean, efficient code, we&rsquo;ve helped over 50 businesses transform their operations and reach new customers, without the jargon or hidden fees.
       </p>
 
-      <!-- Stats -->
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-number">50+</div>
@@ -363,9 +84,10 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/contact/" class="btn-primary" style="display: inline-block; margin: 0 auto;">Work With Us</a>
+      <div class="text-center">
+        <a href="/contact/" class="btn-primary">Work With Us</a>
       </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -379,31 +101,31 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.nav-toggle');
       const menu = document.querySelector('.nav-menu');
+      const nav = document.querySelector('.site-nav');
 
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-
-      document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 768) {
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('active'));
+        document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) menu.classList.remove('active');
+          });
+        });
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
             menu.classList.remove('active');
           }
         });
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav-container') && menu.classList.contains('active')) {
-          menu.classList.remove('active');
-        }
-      });
+      }
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+      }
     });
   </script>
-
 </body>
 </html>
