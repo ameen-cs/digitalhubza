@@ -81,7 +81,6 @@
     <div id="rates" style="display:none;">
       <h2 class="section-title">Exchange Rates</h2>
       <div class="cards-grid" id="rate-grid"></div>
-      <div class="forex-note" id="forexCacheNote"></div>
     </div>
   </section>
 
@@ -126,15 +125,6 @@
       localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() }));
     }
 
-    function formatCacheAge(timestamp) {
-      if (!timestamp || isNaN(timestamp)) return '';
-      const ageMs = Date.now() - timestamp;
-      const hours = Math.floor(ageMs / (60 * 60 * 1000));
-      const minutes = Math.floor((ageMs % (60 * 60 * 1000)) / (60 * 1000));
-      if (hours > 0) return `Cached ${hours}h ${minutes}m ago`;
-      return `Cached ${minutes}m ago`;
-    }
-
     async function fetchAllData() {
       const loading = document.getElementById('loading');
       const errorEl = document.getElementById('error');
@@ -173,7 +163,6 @@
 
       if (cachedForex) {
         rates = cachedForex.rates;
-        document.getElementById('forexCacheNote').textContent = formatCacheAge(cachedForex.timestamp);
       } else {
         try {
           const forexRes = await fetch('https://api.exchangerate-api.com/v4/latest/ZAR');
@@ -181,7 +170,6 @@
             const forex = await forexRes.json();
             rates = forex.rates;
             setCachedData('forex', { rates, timestamp: Date.now() });
-            document.getElementById('forexCacheNote').textContent = 'Updated just now';
           } else {
             throw new Error('Forex API error');
           }
